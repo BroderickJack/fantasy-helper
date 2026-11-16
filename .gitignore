@@ -221,3 +221,7 @@ __marimo__/
 
 # Local public ESPN research cache
 .research-cache/
+
+# This buildless website keeps its source and bundled data in dist.
+!website/dist/
+!website/dist/**

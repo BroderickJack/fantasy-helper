@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173f35">
+  <meta name="description" content="The live QRFFL league average, projected final scores, and your team's place in the pack.">
+  <title>Live scores · Long Live the Quail · QRFFL</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="league.css">
+  <link rel="stylesheet" href="scoreboard.css">
+  <script type="module" src="app.mjs"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to scores</a>
+  <div class="shell">
+    <header class="masthead">
+      <a class="brand" href="./" aria-label="QRFFL home"><img class="brand-icon brand-quail" src="icon.svg" alt="" width="44" height="44" aria-hidden="true"><span>QRFFL<span class="brand-sub">LONG LIVE THE QUAIL</span></span></a>
+      <nav class="site-nav" aria-label="Main navigation"><a href="./">Home</a><a href="scores.html" aria-current="page">Live scores</a><a href="champions.html">Champions</a><a href="research.html">Analytics</a><a href="analytics.html">Q-alytics</a><a href="average.html">Laegue Average</a></nav>
+      <a class="espn-link" href="https://fantasy.espn.com/football/league?leagueId=666462&seasonId=2026" target="_blank" rel="noopener noreferrer">Open ESPN <span aria-hidden="true">↗</span></a>
+    </header>
+    <main id="main">
+      <section class="page-heading" aria-labelledby="page-title">
+        <div><p class="eyebrow">15 TEAMS. ONE NUMBER TO BEAT.</p><h1 id="page-title">Know where you stand.</h1><p class="intro">Your league’s weekly pulse, from kickoff to the final whistle.</p></div>
+        <div class="week-control"><label for="week">2026 SEASON</label><select id="week" disabled><option>Loading weeks…</option></select></div>
+      </section>
+      <div id="error" class="error" role="alert" hidden></div>
+      <section class="matchup-section" aria-labelledby="matchups-title">
+        <div class="section-heading"><div><p class="eyebrow">HEAD TO HEAD</p><h2 id="matchups-title">The matchups</h2></div></div>
+        <div id="matchups" class="matchup-grid" aria-busy="true"><p class="matchups-empty">Fetching the latest matchups from ESPN…</p></div>
+        <p id="matchup-context" class="scoreboard-context">Actual matchup scores, with projected final totals underneath.</p>
+      </section>
+      <section class="league-section comparison-section" id="league-comparison" aria-labelledby="league-title">
+        <div class="section-heading"><div><p class="eyebrow">THE WHOLE PICTURE</p><h2 id="league-title">Teams vs the average</h2></div><div class="legend"><span><i class="dot actual"></i> Scored</span><span><i class="dot projected"></i> Projected final</span></div></div>
+      <div class="score-grid" id="scoreboard" aria-busy="true">
+        <section class="average-card" aria-labelledby="average-title">
+          <div class="card-top"><h2 id="average-title">The league average</h2><span class="data-pill" id="snapshot-state">CONNECTING</span></div>
+          <div class="hero-score"><span id="average-current">—</span><span class="pts">PTS RIGHT NOW</span></div>
+          <div class="projection-row"><div><span class="small-label">PROJECTED FINAL</span><strong id="average-live">—</strong></div><span class="projection-arrow" aria-hidden="true">↗</span></div>
+          <p class="card-note">All 15 real teams included. Average placeholder excluded.</p>
+        </section>
+        <section class="team-card" aria-labelledby="team-title">
+          <div class="card-top"><h2 id="team-title">Your side of the scoreboard</h2><span class="small-label" id="team-rank">— / 15</span></div>
+          <label class="sr-only" for="team">Your team</label><select id="team" disabled><option>Loading teams…</option></select>
+          <div class="your-score"><strong id="team-current">—</strong><span class="margin" id="team-margin">Waiting for ESPN</span></div>
+          <div class="team-projection"><span>Projected final <strong id="team-live">—</strong></span><span id="team-live-margin">— vs average</span></div>
+          <p class="team-note" id="team-note">Choose a team to follow its score against the league.</p>
+        </section>
+      </div>
+        <div class="table-wrap"><table><caption class="sr-only">Scores and projected final scores for all 15 real teams. Sort with the column buttons.</caption><thead><tr><th scope="col" class="rank-col">#</th><th scope="col">TEAM</th><th scope="col" class="number"><button data-sort="current" aria-label="Sort by current score" aria-pressed="true">SCORED ↓</button></th><th scope="col" class="number"><button data-sort="live" aria-label="Sort by projected final score" aria-pressed="false">PROJECTED</button></th><th scope="col" class="number"><button data-sort="margin" aria-label="Sort by margin against average" aria-pressed="false">VS AVG</button></th><th scope="col" class="track-col">SCORE / PROJECTION</th></tr></thead><tbody id="teams"><tr><td colspan="6" class="loading-cell">Fetching the latest from ESPN…</td></tr></tbody></table></div>
+        <div class="update-bar"><span id="updated" role="status" aria-live="polite">Connecting to your league…</span><div class="refresh-controls"><label class="auto-refresh"><input id="auto-refresh" type="checkbox" checked> Auto-refresh · 60s</label><button id="refresh" type="button"><span aria-hidden="true">↻</span> Refresh</button></div></div>
+      <details class="method"><summary>How the average works <span aria-hidden="true">+</span></summary><div><p>We add up the current scores of all 15 real teams and divide by 15. The empty league-average team (#12) is excluded. Projected final uses the same calculation with ESPN’s live projections, which already include points scored.</p><p>Including the team playing against the average changes the number, but doesn’t change whether that team finishes above or below it before rounding. Missing projections are shown as unavailable, never as zero. ESPN’s projections can change during games and are not guaranteed outcomes.</p><p>Pregame projected league average: <strong id="pregame-average">—</strong>. Past matchup cards use the Average’s posted score; this comparison uses the recalculated all-team mean. Scores use your league’s scoring rules. This version supports single-week matchups.</p></div></details>
+      </section>
+    </main>
+    <footer><span class="footer-brand">a little perspective on a big Sunday.</span><span>Powered by ESPN data <span aria-hidden="true">·</span> Unofficial league companion</span><span class="site-version" aria-label="Site version">v1.0.0</span></footer>
+  </div>
+</body>
+</html>

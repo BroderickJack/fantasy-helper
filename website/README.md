@@ -14,6 +14,30 @@ live dashboard is at `scores.html`. Deliberately over-specific historical record
 have their own `analytics.html` page. All pages remain plain static files with no
 build or dependency installation.
 
+## Releases
+
+The current release is **v1.0.0**, shown in every page footer. The version in
+`package.json` is the source for the footer labels and the portable ZIP.
+`website/dist` contains the website source and bundled archives and is tracked
+in Git so each release tag preserves the complete site.
+
+From the repository root, prepare the next release:
+
+```powershell
+python prepare_release.py 1.0.1
+# Update CHANGELOG.md, then run the applicable checks.
+git add website/package.json website/dist CHANGELOG.md
+git commit -m "Release v1.0.1"
+git tag -a v1.0.1 -m "QRFFL v1.0.1"
+```
+
+Use patch versions for fixes, minor versions for new features, and major versions
+for incompatible changes. Tags remain local until pushed. To share a release,
+push its commit and tag: `git push --atomic origin main v1.0.1`.
+Run `python prepare_release.py` without a version to rebuild the ZIP for the
+current release. The generated `qrffl-site.zip` stays outside Git; it can be
+uploaded as a release artifact or deployed on a static host.
+
 ## Analytics: franchise research and trade impact
 
 The serious **Analytics** department is at `research.html`, alongside the separate

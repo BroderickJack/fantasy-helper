@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173f35">
+  <meta name="description" content="Laegue Average's current QRFFL matchup, historical records, season scoring, playoff results, and game-by-game history.">
+  <meta property="og:title" content="Laegue Average · QRFFL">
+  <meta property="og:description" content="Follow the league's shared opponent: this week's score and its season-by-season record.">
+  <title>Laegue Average · Long Live the Quail · QRFFL</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="league.css">
+  <link rel="stylesheet" href="average.css">
+  <script type="module" src="average.mjs"></script>
+</head>
+<body class="average-page">
+  <a class="skip" href="#main">Skip to Laegue Average</a>
+  <div class="shell">
+    <header class="masthead">
+      <a class="brand" href="./" aria-label="QRFFL home"><img class="brand-icon brand-quail" src="icon.svg" alt="" width="44" height="44" aria-hidden="true"><span>QRFFL<span class="brand-sub">LONG LIVE THE QUAIL</span></span></a>
+      <nav class="site-nav" aria-label="Main navigation"><a href="./">Home</a><a href="scores.html">Live scores</a><a href="champions.html">Champions</a><a href="research.html">Analytics</a><a href="analytics.html">Q-alytics</a><a href="average.html" aria-current="page">Laegue Average</a></nav>
+      <a class="espn-link" href="https://fantasy.espn.com/football/league?leagueId=666462&seasonId=2026" target="_blank" rel="noopener noreferrer">Open ESPN <span aria-hidden="true">↗</span></a>
+    </header>
+    <main id="main">
+      <section class="average-hero" aria-labelledby="average-club-title"><div><p class="eyebrow">THE LEAGUE’S SHARED OPPONENT</p><h1 id="average-club-title">Laegue Average</h1><p class="average-hero-copy">A shared score. An unlikely following.</p><p class="average-hero-tagline">The current matchup and a look back at its place in the league.</p><a href="#average-history" class="average-hero-link">View season history <span aria-hidden="true">↓</span></a></div><div class="average-crest"><img src="average-badge.svg" alt="Laegue Average crest" width="132" height="154"><span>FEAR THE MEAN.</span></div></section>
+      <section id="matchday" class="average-matchday" aria-labelledby="matchday-title">
+        <div class="section-heading"><div><p class="eyebrow">THIS WEEK</p><h2 id="matchday-title">Current matchup</h2></div><span id="average-week" class="week-badge">2026 SEASON</span></div>
+        <div id="average-error" class="error" role="alert" hidden></div>
+        <div class="average-scoreboard" id="average-scoreboard" aria-busy="true">
+          <div class="average-side"><span class="average-side-label">LEAGUE AVERAGE</span><h3>Laegue Average</h3><strong id="club-score">—</strong><span class="average-projection">Projected final <b id="club-projected">—</b></span></div>
+          <div class="average-versus"><span>VS</span><span id="matchday-state" class="matchday-state">LOADING</span></div>
+          <div class="average-side opponent-side"><span class="average-side-label">SCHEDULED OPPONENT</span><h3 id="club-opponent">Loading opponent…</h3><strong id="opponent-score">—</strong><span class="average-projection">Projected final <b id="opponent-projected">—</b></span></div>
+          <div class="average-matchday-bottom"><p id="matchday-hype" role="status">Fetching the current matchup.</p><span id="projected-edge">Waiting for projections.</span></div>
+        </div>
+        <div class="average-update-row"><span id="average-updated" role="status">Connecting to ESPN…</span><div><a href="scores.html">Full league scoreboard ↗</a><button id="average-refresh" type="button">↻ Refresh</button></div></div>
+        <p id="mean-contributor" class="average-contributor">All 15 real teams contribute to the current score, including the scheduled opponent.</p>
+      </section>
+      <section id="average-history" class="average-history" aria-labelledby="average-history-title">
+        <div class="section-heading"><div><p class="eyebrow">THE RECORD BOOK</p><h2 id="average-history-title">Season history</h2></div><span id="average-history-coverage" class="archive-footnote">Loading historical results…</span></div>
+        <div id="average-history-error" class="error" role="alert" hidden></div>
+        <div class="average-history-metrics"><div><span class="small-label">REGULAR-SEASON RECORD</span><strong id="average-career-record">—</strong><small id="average-career-games"></small></div><div><span class="small-label">REGULAR-SEASON WIN RATE</span><strong id="average-career-rate">—</strong><small>Ties count as half a win</small></div><div><span class="small-label">BEST COMPLETED REGULAR SEASON</span><strong id="average-best-record">—</strong><small id="average-best-year"></small></div><div><span class="small-label">BEST RECORDED FINISH</span><strong id="average-best-finish">—</strong><small id="average-finish-year"></small></div></div>
+        <p id="average-history-note" class="average-history-note"></p>
+        <div class="table-wrap"><table><caption class="sr-only">Laegue Average's recorded regular-season and championship-bracket results by season</caption><thead><tr><th>SEASON</th><th class="number">REGULAR SEASON</th><th class="number">GAMES</th><th class="number">PTS / GAME</th><th class="number">OPPONENT PTS / GAME</th><th class="number">PLAYOFFS</th><th class="number">FINISH</th></tr></thead><tbody id="average-seasons"><tr><td colspan="7" class="loading-cell">Loading season records…</td></tr></tbody></table></div>
+        <div class="average-scoring"><div class="average-scoring-heading"><h3>Regular-season scoring</h3><div><span><i class="average-key"></i>Average</span><span><i class="opponent-key"></i>Opponents faced</span></div></div><div id="average-scoring-bars"></div><p class="archive-footnote">Points per game. Select a season to view its game log below. Current-season figures cover completed games.</p></div>
+      </section>
+      <section class="average-history" aria-labelledby="average-log-title"><div class="section-heading"><div><p class="eyebrow">GAME BY GAME</p><h2 id="average-log-title">Results</h2></div><div class="average-log-filters"><div><label for="average-history-season">SEASON</label><select id="average-history-season" disabled><option value="all">All seasons</option></select></div><div><label for="average-history-phase">COMPETITION</label><select id="average-history-phase" disabled><option value="regular">Regular season</option><option value="playoff">Championship bracket</option><option value="all">Both</option></select></div></div></div><p id="average-log-count" class="archive-footnote" role="status"></p><div class="table-wrap"><table><caption class="sr-only">Recorded Average scores, opponents, results, margins, and source links</caption><thead><tr><th>SEASON / WEEK</th><th>OPPONENT</th><th class="number">AVERAGE</th><th class="number">OPPONENT</th><th class="number">RESULT</th><th class="number">MARGIN</th><th class="number">SOURCE</th></tr></thead><tbody id="average-game-log"><tr><td colspan="7" class="loading-cell">Loading the game log…</td></tr></tbody></table></div></section>
+      <details class="method"><summary>Scoring and historical coverage <span aria-hidden="true">+</span></summary><div><p>The current score is the sum of all 15 real teams’ points divided by 15. Projected final uses the same calculation with ESPN’s live projected totals. The placeholder is excluded, and the scheduled real opponent is included. The current matchup refreshes every 60 seconds while visible. Missing projections stay unavailable.</p><p>Historical records use the scores and outcomes entered for the Average in ESPN at the time. Those posted scores can differ from a mean recalculated from today’s archive. Regular-season and championship-bracket records are shown separately; consolation games are excluded from those records. The final finish is ESPN’s final overall placing, which can reflect consolation results.</p><p>The available Average history starts in 2022, when team #12 was ownerless and named “BYE WEEK.” The earlier 2019–2021 team #12 had managers, so its results belong to that real team. The current season includes completed weeks only. Games still awaiting an Average score are left out rather than counted as zero-point losses.</p><p id="average-history-updated"></p></div></details>
+    </main>
+    <footer><span class="footer-brand">part of every week.</span><span>Laegue Average <span aria-hidden="true">·</span> Long Live the Quail</span><span class="site-version" aria-label="Site version">v1.0.0</span></footer>
+  </div>
+</body>
+</html>

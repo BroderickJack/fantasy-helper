@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173f35">
+  <meta name="description" content="QRFFL champions, managers, championship scores, and historical records. Long Live the Quail.">
+  <meta property="og:title" content="Champions · Long Live the Quail · QRFFL">
+  <meta property="og:description" content="Explore QRFFL championship results and league history. Long Live the Quail.">
+  <title>Champions · Long Live the Quail · QRFFL</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="league.css">
+  <script type="module" src="champions.mjs"></script>
+</head>
+<body class="champions-page">
+  <a class="skip" href="#main">Skip to champions</a>
+  <div class="shell">
+    <header class="masthead">
+      <a class="brand" href="./" aria-label="QRFFL home"><img class="brand-icon brand-quail" src="icon.svg" alt="" width="44" height="44" aria-hidden="true"><span>QRFFL<span class="brand-sub">LONG LIVE THE QUAIL</span></span></a>
+      <nav class="site-nav" aria-label="Main navigation"><a href="./">Home</a><a href="scores.html">Live scores</a><a href="champions.html" aria-current="page">Champions</a><a href="research.html">Analytics</a><a href="analytics.html">Q-alytics</a><a href="average.html">Laegue Average</a></nav>
+      <a class="espn-link" href="https://fantasy.espn.com/football/league?leagueId=666462&seasonId=2026" target="_blank" rel="noopener noreferrer">Open ESPN <span aria-hidden="true">↗</span></a>
+    </header>
+    <main id="main">
+      <section class="champions-section" id="champions" aria-labelledby="champions-title">
+        <div class="section-heading"><div><p class="eyebrow">THE RECORD BOOKS</p><h1 id="champions-title">Champions of the QRFFL</h1><p class="archive-subtitle" id="archive-coverage">Season-by-season winners, managers, and championship scores.</p></div><div class="archive-search"><label class="sr-only" for="history-search">Find a season, team, or manager</label><input id="history-search" type="search" placeholder="Find a season, team, or manager" autocomplete="off"></div></div>
+        <div id="history-error" class="error" role="alert" hidden></div>
+        <div id="archive-records" class="archive-records" hidden>
+          <div><span class="small-label">CLOSEST FINAL</span><strong id="closest-score">—</strong><span id="closest-detail"></span></div>
+          <div><span class="small-label">HIGHEST WINNING FINAL SCORE</span><strong id="highest-score">—</strong><span id="highest-detail"></span></div>
+          <div><span class="small-label">CHAMPIONSHIPS</span><strong id="championship-count">—</strong><span id="championship-years"></span></div>
+        </div>
+        <div class="table-wrap history-table-wrap"><table class="history-table"><caption class="sr-only">QRFFL champions and championship opponents. Final scores are champion first.</caption><thead><tr><th scope="col">SEASON</th><th scope="col">CHAMPION / MANAGER</th><th scope="col">RUNNER-UP</th><th scope="col" class="number">FINAL SCORE</th><th scope="col" class="number">DETAILS</th></tr></thead><tbody id="history-rows"><tr><td colspan="5" class="loading-cell">Opening the record books…</td></tr></tbody></table></div>
+        <p id="history-count" class="archive-footnote" role="status" aria-live="polite"></p>
+        <details class="method"><summary>About the record books <span aria-hidden="true">+</span></summary><div><p>One league history, from the early years to today. The record books bring together league records and season archives. Each season's details include source notes where available.</p><p>Team names are kept as they were that season, with familiar manager names alongside them. Final scores list the champion first. A dash means that detail hasn't been added yet. Score highlights cover the finals with scores in the record books.</p><p id="history-gaps" hidden></p><p id="history-checked"></p></div></details>
+      </section>
+    </main>
+    <footer><span class="footer-brand">same league. more history.</span><span>QRFFL league home <span aria-hidden="true">·</span> Unofficial ESPN companion</span><span class="site-version" aria-label="Site version">v1.0.0</span></footer>
+  </div>
+</body>
+</html>

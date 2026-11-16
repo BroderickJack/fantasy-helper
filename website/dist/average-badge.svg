@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 210" role="img" aria-labelledby="average-title">
+  <title id="average-title">Laegue Average supporters' crest</title>
+  <path d="M16 12h148v91c0 48-35 77-74 96-39-19-74-48-74-96V12Z" fill="#173f35" stroke="#d9f28a" stroke-width="3"/>
+  <path d="M26 22h128v80c0 39-28 65-64 84-36-19-64-45-64-84V22Z" fill="none" stroke="#d9f28a" stroke-opacity=".3"/>
+  <path d="M42 45h96M48 134h84" stroke="#d9f28a" stroke-width="2"/>
+  <text x="90" y="39" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="3" fill="#d9f28a">LAEGUE</text>
+  <text x="90" y="116" text-anchor="middle" font-family="Georgia,serif" font-size="82" fill="#d9f28a">μ</text>
+  <text x="90" y="155" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="2" fill="#d9f28a">AVERAGE</text>
+  <circle cx="90" cy="172" r="2.5" fill="#d9f28a"/>
+</svg>

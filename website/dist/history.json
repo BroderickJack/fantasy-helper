@@ -1,0 +1,348 @@
+{
+  "league_id": 666462,
+  "league_name": "QRFFL",
+  "current_season": 2026,
+  "checked_at": "2026-11-16T13:54:37.728958+00:00",
+  "discovery_source_url": "https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2026/segments/0/leagues/666462?view=mSettings",
+  "seasons": [
+    {
+      "season": 2025,
+      "status": "verified",
+      "champion": {
+        "team_id": 13,
+        "team_name": "Hit you with the RICO",
+        "managers": [
+          "Cole Partington"
+        ],
+        "manager_display_names": [
+          "Cole Partington"
+        ],
+        "final_rank": 1,
+        "regular_season_record": {
+          "wins": 11,
+          "losses": 3,
+          "ties": 0
+        }
+      },
+      "runner_up": {
+        "team_id": 11,
+        "team_name": "Can You Please Venmo Me $100",
+        "managers": [
+          "Brian ORourke"
+        ],
+        "manager_display_names": [
+          "Brian ORourke"
+        ],
+        "final_rank": 2,
+        "regular_season_record": {
+          "wins": 9,
+          "losses": 5,
+          "ties": 0
+        }
+      },
+      "final": {
+        "champion_score": 131.74,
+        "runner_up_score": 112.18,
+        "matchup_id": 129,
+        "matchup_period": 17,
+        "reported_winner": "HOME"
+      },
+      "verification": "Final rank 1 confirmed against the last winners-bracket matchup and ESPN's declared winner.",
+      "source_url": "https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2025/segments/0/leagues/666462?view=mTeam&view=mSettings&view=mStandings&view=mMatchupScore",
+      "standings_url": "https://fantasy.espn.com/football/standings?leagueId=666462&seasonId=2025",
+      "scoreboard_url": "https://fantasy.espn.com/football/scoreboard?leagueId=666462&seasonId=2025&matchupPeriodId=17"
+    },
+    {
+      "season": 2024,
+      "status": "verified",
+      "champion": {
+        "team_id": 9,
+        "team_name": "The Men's Coffee Club",
+        "managers": [
+          "Erik Dash"
+        ],
+        "manager_display_names": [
+          "Erik Dash"
+        ],
+        "final_rank": 1,
+        "regular_season_record": {
+          "wins": 10,
+          "losses": 4,
+          "ties": 0
+        }
+      },
+      "runner_up": {
+        "team_id": 4,
+        "team_name": "Cleveland  Calves",
+        "managers": [
+          "Jordan Reynolds"
+        ],
+        "manager_display_names": [
+          "Jordan Reynolds"
+        ],
+        "final_rank": 2,
+        "regular_season_record": {
+          "wins": 8,
+          "losses": 6,
+          "ties": 0
+        }
+      },
+      "final": {
+        "champion_score": 104.68,
+        "runner_up_score": 98.06,
+        "matchup_id": 129,
+        "matchup_period": 17,
+        "reported_winner": "HOME"
+      },
+      "verification": "Final rank 1 confirmed against the last winners-bracket matchup and ESPN's declared winner.",
+      "source_url": "https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2024/segments/0/leagues/666462?view=mTeam&view=mSettings&view=mStandings&view=mMatchupScore",
+      "standings_url": "https://fantasy.espn.com/football/standings?leagueId=666462&seasonId=2024",
+      "scoreboard_url": "https://fantasy.espn.com/football/scoreboard?leagueId=666462&seasonId=2024&matchupPeriodId=17"
+    },
+    {
+      "season": 2023,
+      "status": "verified",
+      "champion": {
+        "team_id": 14,
+        "team_name": "KEEP SLEEPING",
+        "managers": [
+          "kyle O'Dea"
+        ],
+        "manager_display_names": [
+          "kyle O'Dea"
+        ],
+        "final_rank": 1,
+        "regular_season_record": {
+          "wins": 10,
+          "losses": 4,
+          "ties": 0
+        }
+      },
+      "runner_up": {
+        "team_id": 3,
+        "team_name": "Della Croce Memorial M1dgets",
+        "managers": [
+          "Mitch Haefele"
+        ],
+        "manager_display_names": [
+          "Mitch Haefele"
+        ],
+        "final_rank": 2,
+        "regular_season_record": {
+          "wins": 9,
+          "losses": 5,
+          "ties": 0
+        }
+      },
+      "final": {
+        "champion_score": 113.48,
+        "runner_up_score": 72.08,
+        "matchup_id": 129,
+        "matchup_period": 17,
+        "reported_winner": "HOME"
+      },
+      "verification": "Final rank 1 confirmed against the last winners-bracket matchup and ESPN's declared winner.",
+      "source_url": "https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2023/segments/0/leagues/666462?view=mTeam&view=mSettings&view=mStandings&view=mMatchupScore",
+      "standings_url": "https://fantasy.espn.com/football/standings?leagueId=666462&seasonId=2023",
+      "scoreboard_url": "https://fantasy.espn.com/football/scoreboard?leagueId=666462&seasonId=2023&matchupPeriodId=17"
+    },
+    {
+      "season": 2022,
+      "status": "verified",
+      "champion": {
+        "team_id": 8,
+        "team_name": "Trimming The Fat",
+        "managers": [
+          "adam d"
+        ],
+        "manager_display_names": [
+          "Adam"
+        ],
+        "final_rank": 1,
+        "regular_season_record": {
+          "wins": 10,
+          "losses": 4,
+          "ties": 0
+        }
+      },
+      "runner_up": {
+        "team_id": 1,
+        "team_name": "Puterko's  Crime Family",
+        "managers": [
+          "Blake Reynolds"
+        ],
+        "manager_display_names": [
+          "Blake Reynolds"
+        ],
+        "final_rank": 2,
+        "regular_season_record": {
+          "wins": 12,
+          "losses": 2,
+          "ties": 0
+        }
+      },
+      "final": {
+        "champion_score": 134.2,
+        "runner_up_score": 97.94,
+        "matchup_id": 129,
+        "matchup_period": 17,
+        "reported_winner": "AWAY"
+      },
+      "verification": "Final rank 1 confirmed against the last winners-bracket matchup and ESPN's declared winner.",
+      "source_url": "https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2022/segments/0/leagues/666462?view=mTeam&view=mSettings&view=mStandings&view=mMatchupScore",
+      "standings_url": "https://fantasy.espn.com/football/standings?leagueId=666462&seasonId=2022",
+      "scoreboard_url": "https://fantasy.espn.com/football/scoreboard?leagueId=666462&seasonId=2022&matchupPeriodId=17"
+    },
+    {
+      "season": 2021,
+      "status": "verified",
+      "champion": {
+        "team_id": 3,
+        "team_name": "For Gus",
+        "managers": [
+          "Mitch Haefele"
+        ],
+        "manager_display_names": [
+          "Mitch Haefele"
+        ],
+        "final_rank": 1,
+        "regular_season_record": {
+          "wins": 7,
+          "losses": 7,
+          "ties": 0
+        }
+      },
+      "runner_up": {
+        "team_id": 13,
+        "team_name": "Big DE Energy",
+        "managers": [
+          "Cole Partington"
+        ],
+        "manager_display_names": [
+          "Cole Partington"
+        ],
+        "final_rank": 2,
+        "regular_season_record": {
+          "wins": 7,
+          "losses": 7,
+          "ties": 0
+        }
+      },
+      "final": {
+        "champion_score": 100.46,
+        "runner_up_score": 81.38,
+        "matchup_id": 129,
+        "matchup_period": 17,
+        "reported_winner": "HOME"
+      },
+      "verification": "Final rank 1 confirmed against the last winners-bracket matchup and ESPN's declared winner.",
+      "source_url": "https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2021/segments/0/leagues/666462?view=mTeam&view=mSettings&view=mStandings&view=mMatchupScore",
+      "standings_url": "https://fantasy.espn.com/football/standings?leagueId=666462&seasonId=2021",
+      "scoreboard_url": "https://fantasy.espn.com/football/scoreboard?leagueId=666462&seasonId=2021&matchupPeriodId=17"
+    },
+    {
+      "season": 2020,
+      "status": "verified",
+      "champion": {
+        "team_id": 5,
+        "team_name": "Literal Garbage",
+        "managers": [
+          "Alex Heinlein"
+        ],
+        "manager_display_names": [
+          "Alex Heinlein"
+        ],
+        "final_rank": 1,
+        "regular_season_record": {
+          "wins": 6,
+          "losses": 7,
+          "ties": 0
+        }
+      },
+      "runner_up": {
+        "team_id": 9,
+        "team_name": "The Pre-Draft PowerPoints",
+        "managers": [
+          "Erik Dash"
+        ],
+        "manager_display_names": [
+          "Erik Dash"
+        ],
+        "final_rank": 2,
+        "regular_season_record": {
+          "wins": 6,
+          "losses": 7,
+          "ties": 0
+        }
+      },
+      "final": {
+        "champion_score": 130.82,
+        "runner_up_score": 110.0,
+        "matchup_id": 106,
+        "matchup_period": 16,
+        "reported_winner": "AWAY"
+      },
+      "verification": "Final rank 1 confirmed against the last winners-bracket matchup and ESPN's declared winner.",
+      "source_url": "https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2020/segments/0/leagues/666462?view=mTeam&view=mSettings&view=mStandings&view=mMatchupScore",
+      "standings_url": "https://fantasy.espn.com/football/standings?leagueId=666462&seasonId=2020",
+      "scoreboard_url": "https://fantasy.espn.com/football/scoreboard?leagueId=666462&seasonId=2020&matchupPeriodId=16"
+    },
+    {
+      "season": 2019,
+      "status": "verified",
+      "champion": {
+        "team_id": 11,
+        "team_name": "Can You Please Venmo me",
+        "managers": [
+          "Brian ORourke"
+        ],
+        "manager_display_names": [
+          "Brian ORourke"
+        ],
+        "final_rank": 1,
+        "regular_season_record": {
+          "wins": 6,
+          "losses": 7,
+          "ties": 0
+        }
+      },
+      "runner_up": {
+        "team_id": 7,
+        "team_name": "Zeke and Destroy",
+        "managers": [
+          "Spencer Cramer"
+        ],
+        "manager_display_names": [
+          "Spencer Cramer"
+        ],
+        "final_rank": 2,
+        "regular_season_record": {
+          "wins": 8,
+          "losses": 5,
+          "ties": 0
+        }
+      },
+      "final": {
+        "champion_score": 124.28,
+        "runner_up_score": 110.02,
+        "matchup_id": 106,
+        "matchup_period": 16,
+        "reported_winner": "AWAY"
+      },
+      "verification": "Final rank 1 confirmed against the last winners-bracket matchup and ESPN's declared winner.",
+      "source_url": "https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2019/segments/0/leagues/666462?view=mTeam&view=mSettings&view=mStandings&view=mMatchupScore",
+      "standings_url": "https://fantasy.espn.com/football/standings?leagueId=666462&seasonId=2019",
+      "scoreboard_url": "https://fantasy.espn.com/football/scoreboard?leagueId=666462&seasonId=2019&matchupPeriodId=16"
+    },
+    {
+      "season": 2018,
+      "status": "unavailable",
+      "reason": "Listed in ESPN league history, but its archive could not be retrieved or independently verified.",
+      "attempts": [
+        "HTTP 401",
+        "HTTP 404"
+      ],
+      "standings_url": "https://fantasy.espn.com/football/standings?leagueId=666462&seasonId=2018"
+    }
+  ]
+}
