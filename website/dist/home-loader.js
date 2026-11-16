@@ -8,6 +8,9 @@
     $('home-scores-error').textContent = message;
     $('home-scores-error').hidden = false;
     $('home-live-status').textContent = 'Scores have not loaded.';
+    $('home-average-state').textContent = 'UNAVAILABLE';
+    $('home-average-note').textContent = message;
+    $('home-average-opponent').textContent = 'Opponent unavailable';
     $('home-matchups').textContent = message;
     const cell = document.createElement('td');
     cell.colSpan = 6;
@@ -16,12 +19,12 @@
     const row = document.createElement('tr');
     row.append(cell);
     $('home-teams').replaceChildren(row);
-    for (const id of ['home-matchups', 'home-comparison', 'defending-card']) $(id).setAttribute('aria-busy', 'false');
+    for (const id of ['home-matchups', 'home-comparison', 'home-average-scoreboard', 'defending-card']) $(id).setAttribute('aria-busy', 'false');
     $('defending-title').textContent = 'The record books could not load.';
     $('champion-manager').textContent = 'Reload the page or visit Champions.';
     $('home-refresh').disabled = false;
     $('home-refresh').textContent = '↻ Reload page';
     $('home-refresh').onclick = () => location.reload();
   };
-  import('./home.mjs?v=20261116-2').catch(showStartupError);
+  import('./home.mjs?v=20261116-3').catch(showStartupError);
 })();

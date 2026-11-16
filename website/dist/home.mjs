@@ -2,6 +2,7 @@ import { fetchLeague, DEFAULT_TEAM_ID } from './data.mjs';
 import { buildScoreboard } from './scoreboard-data.mjs';
 import { renderMatchups, renderComparison, showScoreboardUnavailable, bindComparisonSort } from './scoreboard-view.mjs';
 import { championships, managers, finalScores } from './history-data.mjs';
+import { supporterSnapshot } from './average-data.mjs';
 
 const $ = id => document.getElementById(id);
 const points = value => value == null ? '—' : value.toFixed(2);
@@ -37,6 +38,21 @@ try { selectedTeam = Number(localStorage.getItem('qrffl-team')) || DEFAULT_TEAM_
 function renderLiveSnapshot() {
   if (!snapshot) return;
   $('home-week').textContent = `WEEK ${snapshot.week}`;
+  const average = supporterSnapshot(snapshot);
+  $('home-average-week').textContent = `WEEK ${snapshot.week}`;
+  $('home-average-title').textContent = `Laegue Average vs. ${average.opponent?.name ?? 'opponent unassigned'}`;
+  $('home-average-score').textContent = points(snapshot.current);
+  $('home-average-projected').textContent = points(snapshot.live);
+  $('home-average-opponent').textContent = average.opponent?.name ?? 'Opponent unassigned';
+  $('home-average-opponent-score').textContent = points(average.opponent?.current);
+  $('home-average-opponent-projected').textContent = points(average.opponent?.live);
+  $('home-average-state').textContent = lastAttemptFailed ? 'STALE SNAPSHOT'
+    : ({ ahead: 'LEADING', behind: 'TRAILING', level: 'LEVEL', unknown: 'UNASSIGNED' })[average.mood];
+  const margin = average.currentMargin == null ? null : Math.abs(average.currentMargin);
+  const distance = margin != null && margin > 1e-9 && margin < .005 ? 'less than 0.01' : points(margin);
+  $('home-average-note').textContent = average.mood === 'unknown' ? 'No opponent is assigned in this snapshot.'
+    : average.mood === 'level' ? 'The matchup is level on points.'
+    : `The Average ${average.mood === 'ahead' ? 'leads' : 'trails'} by ${distance} points.`;
   $('home-current').textContent = points(snapshot.current);
   $('home-projected').textContent = points(snapshot.live);
   renderMatchups(snapshot, $('home-matchups'), { selectedTeam, stale: lastAttemptFailed });
@@ -54,6 +70,7 @@ async function loadLiveSnapshot() {
   $('home-refresh').textContent = 'Refreshing…';
   $('home-matchups').setAttribute('aria-busy', 'true');
   $('home-comparison').setAttribute('aria-busy', 'true');
+  $('home-average-scoreboard').setAttribute('aria-busy', 'true');
   try {
     const data = await fetchLeague(null, controller.signal);
     const next = buildScoreboard(data, data.scoringPeriodId);
@@ -70,6 +87,9 @@ async function loadLiveSnapshot() {
     else {
       showScoreboardUnavailable($('home-matchups'), $('home-teams'), 'Scores could not be loaded. Use Refresh to try again.');
       $('home-live-status').textContent = 'No scores loaded yet. Refresh to retry.';
+      $('home-average-state').textContent = 'UNAVAILABLE';
+      $('home-average-opponent').textContent = 'Opponent unavailable';
+      $('home-average-note').textContent = 'Scores could not be loaded. Use Refresh to try again.';
     }
   } finally {
     clearTimeout(timeout);
@@ -78,6 +98,7 @@ async function loadLiveSnapshot() {
     $('home-refresh').textContent = '↻ Refresh';
     $('home-matchups').setAttribute('aria-busy', 'false');
     $('home-comparison').setAttribute('aria-busy', 'false');
+    $('home-average-scoreboard').setAttribute('aria-busy', 'false');
   }
 }
 

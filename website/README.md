@@ -5,10 +5,13 @@ It fetches the public ESPN league directly from each visitor's browser. CORS
 support was verified against ESPN. An internet connection and continued public
 league access are required.
 
-The home page features the latest champion, followed by current-week matchup
-cards and a sortable team-versus-average list at the bottom. Live scores uses
-the same order, with a week picker and selected-team details. Both sections share
-one ESPN snapshot and refresh every 60 seconds while visible. The
+The home page leads with Laegue Average versus its current scheduled opponent,
+including both scores, projected final totals, and the current lead or deficit.
+The latest champion and full weekly matchup cards follow, with a sortable
+team-versus-average list at the bottom. Live scores shows matchup cards above
+the comparison list, with a week picker and selected-team details. The featured
+matchup and the other score sections share one ESPN snapshot and refresh every
+60 seconds while visible. The
 searchable champions archive has its own page at `champions.html`, and the full
 live dashboard is at `scores.html`. Deliberately over-specific historical records
 have their own `analytics.html` page. All pages remain plain static files with no
@@ -16,7 +19,7 @@ build or dependency installation.
 
 ## Releases
 
-The current release is **v1.0.0**, shown in every page footer. The version in
+The current release is **v1.0.1**, shown in every page footer. The version in
 `package.json` is the source for the footer labels and the portable ZIP.
 `website/dist` contains the website source and bundled archives and is tracked
 in Git so each release tag preserves the complete site.
@@ -24,16 +27,16 @@ in Git so each release tag preserves the complete site.
 From the repository root, prepare the next release:
 
 ```powershell
-python prepare_release.py 1.0.1
+python prepare_release.py 1.0.2
 # Update CHANGELOG.md, then run the applicable checks.
 git add website/package.json website/dist CHANGELOG.md
-git commit -m "Release v1.0.1"
-git tag -a v1.0.1 -m "QRFFL v1.0.1"
+git commit -m "Release v1.0.2"
+git tag -a v1.0.2 -m "QRFFL v1.0.2"
 ```
 
 Use patch versions for fixes, minor versions for new features, and major versions
 for incompatible changes. Tags remain local until pushed. To share a release,
-push its commit and tag: `git push --atomic origin main v1.0.1`.
+push its commit and tag: `git push --atomic origin main v1.0.2`.
 Run `python prepare_release.py` without a version to rebuild the ZIP for the
 current release. The generated `qrffl-site.zip` stays outside Git; it can be
 uploaded as a release artifact or deployed on a static host.

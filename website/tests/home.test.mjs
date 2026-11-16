@@ -65,6 +65,15 @@ test('homepage renders champion, eight matchups, and 15 comparisons with one ESP
   assert.equal($('home-matchups').children.length, 8);
   assert.equal($('home-teams').children.length, 15);
   assert.equal($('home-current').textContent, '82.67');
+  assert.equal($('home-average-score').textContent, '82.67');
+  assert.equal($('home-average-projected').textContent, '128.27');
+  assert.equal($('home-average-opponent').textContent, 'Team 11');
+  assert.equal($('home-average-opponent-score').textContent, '110.00');
+  assert.equal($('home-average-opponent-projected').textContent, '131.00');
+  assert.equal($('home-average-title').textContent, 'Laegue Average vs. Team 11');
+  assert.equal($('home-average-state').textContent, 'TRAILING');
+  assert.match($('home-average-note').textContent, /trails by 27.33/);
+  assert.equal($('home-average-scoreboard').attributes['aria-busy'], 'false');
   assert.equal($('home-matchups').attributes['aria-busy'], 'false');
   assert.equal($('home-refresh').disabled, false);
   assert.equal($('home-scores-error').hidden, true);
@@ -80,6 +89,8 @@ test('ESPN failure exits loading and leaves a usable retry button', async t => {
   assert.match($('home-teams').textContent, /could not be loaded/);
   assert.equal($('home-comparison').attributes['aria-busy'], 'false');
   assert.equal($('home-refresh').disabled, false);
+  assert.equal($('home-average-state').textContent, 'UNAVAILABLE');
+  assert.equal($('home-average-scoreboard').attributes['aria-busy'], 'false');
 });
 
 test('a stalled ESPN request times out and clears both loading sections', async t => {
@@ -94,6 +105,7 @@ test('a stalled ESPN request times out and clears both loading sections', async 
   assert.match($('home-scores-error').textContent, /too long/);
   assert.equal($('home-matchups').attributes['aria-busy'], 'false');
   assert.equal($('home-comparison').attributes['aria-busy'], 'false');
+  assert.equal($('home-average-scoreboard').attributes['aria-busy'], 'false');
   assert.equal($('home-refresh').disabled, false);
 });
 
@@ -109,6 +121,9 @@ test('failed refresh preserves the last complete scoreboard and labels it stale'
   assert.equal($('home-teams').children.length, 15);
   assert.match($('home-matchups').textContent, /STALE SNAPSHOT/);
   assert.match($('home-live-status').textContent, /Last successful fetch/);
+  assert.equal($('home-average-state').textContent, 'STALE SNAPSHOT');
+  assert.equal($('home-average-score').textContent, '82.67');
+  assert.equal($('home-average-opponent-score').textContent, '110.00');
   assert.equal($('home-refresh').disabled, false);
 });
 

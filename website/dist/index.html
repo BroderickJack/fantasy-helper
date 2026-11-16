@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="league.css">
   <link rel="stylesheet" href="average.css">
   <link rel="stylesheet" href="scoreboard.css">
-  <script defer src="home-loader.js?v=20261116-2"></script>
+  <script defer src="home-loader.js?v=20261116-3"></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to league home</a>
@@ -29,6 +29,17 @@
         <h1 id="home-title">Long Live the Quail</h1>
         <p class="intro">Follow the scores. Revisit the finals. Keep the league’s story in one place.</p>
       </section>
+      <section class="average-matchday home-average-feature" aria-labelledby="home-average-title">
+        <div class="section-heading"><div><p class="eyebrow">THIS WEEK’S FEATURED MATCHUP</p><h2 id="home-average-title">Laegue Average vs. the opponent</h2></div><span id="home-average-week" class="week-badge">2026 SEASON</span></div>
+        <div id="home-scores-error" class="error" role="alert" hidden></div>
+        <div class="average-scoreboard" id="home-average-scoreboard" aria-busy="true">
+          <div class="average-side"><span class="average-side-label">ALL 15 REAL TEAMS</span><h3>Laegue Average</h3><strong id="home-average-score">—</strong><span class="average-projection">Projected final <b id="home-average-projected">—</b></span></div>
+          <div class="average-versus"><span>VS</span><span id="home-average-state" class="matchday-state">LOADING</span></div>
+          <div class="average-side opponent-side"><span class="average-side-label">SCHEDULED OPPONENT</span><h3 id="home-average-opponent">Loading opponent…</h3><strong id="home-average-opponent-score">—</strong><span class="average-projection">Projected final <b id="home-average-opponent-projected">—</b></span></div>
+          <div class="average-matchday-bottom"><p id="home-average-note" role="status">Fetching the current matchup.</p><a class="scoreboard-link" href="average.html">The Average’s record and history ↗</a></div>
+        </div>
+          <div class="update-bar"><span id="home-live-status" role="status" aria-live="polite">Connecting to your league…</span><div class="refresh-controls"><label class="auto-refresh"><input id="home-auto-refresh" type="checkbox" checked> Auto-refresh · 60s</label><button id="home-refresh" class="scoreboard-refresh" type="button">↻ Refresh</button></div></div>
+      </section>
         <section class="defending-card" aria-labelledby="defending-title" aria-busy="true" id="defending-card">
           <div class="card-top"><p class="eyebrow" id="champion-season">THE REIGNING CHAMPION</p><span class="trophy" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><path d="M20 10h24v17c0 10-5 17-12 17s-12-7-12-17V10Z" stroke="currentColor" stroke-width="2.5"/><path d="M20 15H9v8c0 8 5 12 13 12m22-20h11v8c0 8-5 12-13 12M32 44v10m-11 1h22" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="m32 18 2.5 5 5.5.8-4 3.9.9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-3.9 5.5-.8L32 18Z" fill="currentColor"/></svg></span></div>
           <h2 id="defending-title">Loading the record books…</h2>
@@ -39,9 +50,7 @@
         <a class="average-home-invite" href="average.html"><img src="average-badge.svg" alt="" width="48" height="56"><div><p class="eyebrow">LAEGUE AVERAGE</p><strong>The Average, over time.</strong><p>Current matchup, season records, and the games behind them.</p></div><span aria-hidden="true">↗</span></a>
         <section class="matchup-section" aria-labelledby="home-matchups-title">
           <div class="section-heading"><div><p class="eyebrow">THIS WEEK IN THE QRFFL</p><h2 id="home-matchups-title">The matchups</h2></div><span id="home-week" class="week-badge">2026 SEASON</span></div>
-          <div id="home-scores-error" class="error" role="alert" hidden></div>
           <div id="home-matchups" class="matchup-grid" aria-busy="true"><p class="matchups-empty">Fetching the latest matchups from ESPN…</p></div>
-          <div class="update-bar"><span id="home-live-status" role="status" aria-live="polite">Connecting to your league…</span><div class="refresh-controls"><label class="auto-refresh"><input id="home-auto-refresh" type="checkbox" checked> Auto-refresh · 60s</label><button id="home-refresh" class="scoreboard-refresh" type="button">↻ Refresh</button></div></div>
           <p><a class="scoreboard-link" href="scores.html">Open Live scores for other weeks and team details <span aria-hidden="true">↗</span></a></p>
         </section>
         <section class="league-section comparison-section" id="home-comparison" aria-labelledby="home-comparison-title">
@@ -50,7 +59,7 @@
           <div class="table-wrap"><table><caption class="sr-only">Scores and projected final scores for all 15 real teams compared to the league average. Sort with the column buttons.</caption><thead><tr><th scope="col" class="rank-col">#</th><th scope="col">TEAM</th><th scope="col" class="number"><button data-sort="current" aria-label="Sort by current score" aria-pressed="true">SCORED ↓</button></th><th scope="col" class="number"><button data-sort="live" aria-label="Sort by projected final score" aria-pressed="false">PROJECTED</button></th><th scope="col" class="number"><button data-sort="margin" aria-label="Sort by margin against average" aria-pressed="false">VS AVG</button></th><th scope="col" class="track-col">SCORE / PROJECTION</th></tr></thead><tbody id="home-teams"><tr><td colspan="6" class="loading-cell">Fetching the latest from ESPN…</td></tr></tbody></table></div>
         </section>
     </main>
-    <footer><span class="footer-brand">same league. more history.</span><span>QRFFL league home <span aria-hidden="true">·</span> Unofficial ESPN companion</span><span class="site-version" aria-label="Site version">v1.0.0</span></footer>
+    <footer><span class="footer-brand">same league. more history.</span><span>QRFFL league home <span aria-hidden="true">·</span> Unofficial ESPN companion</span><span class="site-version" aria-label="Site version">v1.0.1</span></footer>
   </div>
 </body>
 </html>

@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.0.1 — 2026-11-16
+
+- Feature Laegue Average versus its scheduled opponent at the top of the homepage,
+  with current scores, projections, and the lead or deficit.
+
 ## v1.0.0 — 2026-11-16
 
 First QRFFL website release:
