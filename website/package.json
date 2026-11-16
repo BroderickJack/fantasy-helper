@@ -1,0 +1,10 @@
+{
+  "name": "qrffl-the-average",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "dev": "python -m http.server 8080 --directory dist"
+  }
+}
